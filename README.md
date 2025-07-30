@@ -223,3 +223,19 @@ fetch('/api/portfolio/performance')
       }
     });
   });
+
+
+
+
+  //mysql workbench
+  CREATE DATABASE IF NOT EXISTS portfolio_db;
+USE portfolio_db;
+
+CREATE TABLE portfolio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type ENUM('stock', 'bond', 'cash') NOT NULL,
+    value DECIMAL(15,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
